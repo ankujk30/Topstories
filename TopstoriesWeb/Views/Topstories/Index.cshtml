@@ -1,0 +1,38 @@
+﻿@model TopstoriesWeb.Models.Topstories;
+@{
+    var Title = "Add Article Data";
+}
+<form method="post">
+    <div class="row px-2 mx-2 mt-5 backgroundWhite border">
+        <div class="col-12 p-3 pb-3 text-center">
+            <h2 class="text-primary">@Title</h2>
+        </div>
+        <div class="col-12">
+            <div class="form-group row pb-3">
+                <div class="col-3 pl-5 text-right">
+                    <label asp-for="ApiKey"></label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="ApiKey" class="form-control">
+                    <span asp-validation-for="ApiKey" class="text-danger"></span>
+                    @if (ViewBag.resposnseMesage != null)
+                    {
+                        <span class="text-danger">@ViewBag.resposnseMesage</span>
+                    }
+                    @if (ViewBag.successMessage != null)
+                    {
+                        <span class="text-success">@ViewBag.successMessage</span>
+                    }
+                </div>
+            </div>
+            <div class="row pb-3 justify-content-center">
+                <div>
+                    <button type="submit" class="btn btn-primary form-control">Submit</button>
+                </div>
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </div>
+</form>
